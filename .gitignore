@@ -1,0 +1,18 @@
+# Bundler files
+/.bundle/
+/Gemfile.lock
+
+# YarDOC files
+/.yardoc
+/_yardoc/
+
+# Miscellaneous files
+/coverage/
+/pkg/
+/spec/reports/
+/tmp/
+
+# RBenv files
+.ruby-version
+.rbenv-gemsets
+.gems/*
