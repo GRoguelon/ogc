@@ -1,3 +1,3 @@
-require 'ogc/version'
-
 module Ogc; end
+
+require 'ogc/version'
