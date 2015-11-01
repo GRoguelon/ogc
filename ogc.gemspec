@@ -6,15 +6,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ogc/version'
 
 Gem::Specification.new do |spec|
-  spec.required_ruby_version = '~> 2.0'
+  spec.required_ruby_version = '~> 2.1'
 
   spec.name    = 'ogc'
   spec.version = Ogc::VERSION
   spec.authors = ['Geoffrey Roguelon']
   spec.email   = ['geoffrey.roguelon@gmail.com']
 
-  spec.summary     = %q{Allow you to use WFS or WPS protocols defined by OGC.}
-  spec.description = %q{This gems allow you to make calls in using WFS or WPS protocols defined by OGC organization.}
+  spec.summary     = %q{Allow you to use WFS protocol defined by OGC.}
+  spec.description = %q{This gems allow you to make calls in using  Web Feature Service protocol defined by OGC (Open Geospatial Consortium) organization.}
   spec.homepage    = 'https://github.com/GRoguelon/ogc'
   spec.license     = 'MIT'
 
