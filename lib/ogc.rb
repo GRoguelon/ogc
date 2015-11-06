@@ -6,3 +6,4 @@ require 'ogc/query'
 
 require 'ogc/exceptions'
 require 'ogc/version'
+require 'ogc/web_feature_service'

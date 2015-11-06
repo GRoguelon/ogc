@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WFS_Capabilities xmlns="http://www.opengis.net/wfs" xmlns:myns="http://www.someserver.com/myns" xmlns:ogc="http://www.opengis.net/ogc" version="1.0.0">
+    <Service>
+        <Name>CubeWerx WFS</Name>
+        <Title>CubeWerx Web Feature Service</Title>
+        <Abstract>Web Feature Server maintained by CubeWerx Inc.</Abstract>
+        <OnlineResource>http://www.someserver.com/wfs/cwwfs.cgi?</OnlineResource>
+    </Service>
+    <Capability>
+        <Request>
+            <GetCapabilities>
+                <DCPType>
+                    <HTTP>
+                        <Get onlineResource="http://www.someserver.com/wfs/cwwfs.cgi?" />
+                    </HTTP>
+                </DCPType>
+                <DCPType>
+                    <HTTP>
+                        <Post onlineResource="http://www.someserver.com/wfs/cwwfs.cgi" />
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+            <DescribeFeatureType>
+                <SchemaDescriptionLanguage>
+                    <XMLSCHEMA />
+                </SchemaDescriptionLanguage>
+                <DCPType>
+                    <HTTP>
+                        <Get onlineResource="http://www.someserver.com/wfs/cwwfs.cgi?" />
+                    </HTTP>
+                </DCPType>
+                <DCPType>
+                    <HTTP>
+                        <Post onlineResource="http://www.someserver.com/wfs/cwwfs.cgi" />
+                    </HTTP>
+                </DCPType>
+            </DescribeFeatureType>
+            <GetFeature>
+                <ResultFormat>
+                    <GML2 />
+                </ResultFormat>
+                <DCPType>
+                    <HTTP>
+                        <Get onlineResource="http://www.someserver.com/wfs/cwwfs.cgi?" />
+                    </HTTP>
+                </DCPType>
+                <DCPType>
+                    <HTTP>
+                        <Post onlineResource="http://www.someserver.com/wfs/cwwfs.cgi" />
+                    </HTTP>
+                </DCPType>
+            </GetFeature>
+            <GetFeatureWithLock>
+                <ResultFormat>
+                    <GML2 />
+                </ResultFormat>
+                <DCPType>
+                    <HTTP>
+                        <Get onlineResource="http://www.someserver.com/wfs/cwwfs.cgi?" />
+                    </HTTP>
+                </DCPType>
+                <DCPType>
+                    <HTTP>
+                        <Post onlineResource="http://www.someserver.com/wfs/cwwfs.cgi" />
+                    </HTTP>
+                </DCPType>
+            </GetFeatureWithLock>
+            <Transaction>
+                <DCPType>
+                    <HTTP>
+                        <Get onlineResource="http://www.someserver.com/wfs/cwwfs.cgi?" />
+                    </HTTP>
+                </DCPType>
+                <DCPType>
+                    <HTTP>
+                        <Post onlineResource="http://www.someserver.com/wfs/cwwfs.cgi" />
+                    </HTTP>
+                </DCPType>
+            </Transaction>
+            <LockFeature>
+                <DCPType>
+                    <HTTP>
+                        <Get onlineResource="http://www.someserver.com/wfs/cwwfs.cgi?" />
+                    </HTTP>
+                </DCPType>
+                <DCPType>
+                    <HTTP>
+                        <Post onlineResource="http://www.someserver.com/wfs/cwwfs.cgi" />
+                    </HTTP>
+                </DCPType>
+            </LockFeature>
+        </Request>
+    </Capability>
+    <FeatureTypeList>
+        <Operations>
+            <Query />
+        </Operations>
+        <FeatureType>
+            <Name>myns:BUILTUPA_1M</Name>
+            <SRS>EPSG:4326</SRS>
+            <Operations>
+                <Insert />
+                <Update />
+                <Delete />
+            </Operations>
+            <LatLongBoundingBox minx="-179.1296081543" miny="-53.167423248291" maxx="178.44325256348" maxy="70.992721557617" />
+        </FeatureType>
+        <FeatureType>
+            <Name>myns:COASTL_1M</Name>
+            <SRS>EPSG:4326</SRS>
+            <LatLongBoundingBox minx="-179.99942016602" miny="-85.582763671875" maxx="179.9999" maxy="83.627418518066" />
+        </FeatureType>
+        <FeatureType>
+            <Name>myns:ELEVP_1M</Name>
+            <SRS>EPSG:4326</SRS>
+            <Operations>
+                <Insert />
+                <Update />
+                <Delete />
+            </Operations>
+            <LatLongBoundingBox minx="-179.9984893715" miny="-89.83837892767" maxx="179.99234007206" maxy="83.520408603363" />
+        </FeatureType>
+        <FeatureType>
+            <Name>myns:OCEANSEA_1M</Name>
+            <SRS>EPSG:4326</SRS>
+            <Operations>
+                <Insert />
+                <Update />
+                <Delete />
+            </Operations>
+            <LatLongBoundingBox minx="-179.9999" miny="-85.582763671875" maxx="179.99996948242" maxy="89.9999" />
+        </FeatureType>
+        <FeatureType>
+            <Name>myns:RAILRDL_1M</Name>
+            <SRS>EPSG:4326</SRS>
+            <Operations>
+                <Insert />
+                <Update />
+                <Delete />
+            </Operations>
+            <LatLongBoundingBox minx="-165.24467468262" miny="-53.138427734375" maxx="179.60989379883" maxy="78.16796875" />
+        </FeatureType>
+        <FeatureType>
+            <Name>myns:TREESA_1M</Name>
+            <SRS>EPSG:4326</SRS>
+            <Operations>
+                <Insert />
+                <Update />
+                <Delete />
+            </Operations>
+            <LatLongBoundingBox minx="-139.99757385254" miny="25.281270980835" maxx="-52.661720275879" maxy="66.718765258789" />
+        </FeatureType>
+    </FeatureTypeList>
+    <ogc:Filter_Capabilities>
+        <ogc:Spatial_Capabilities>
+            <ogc:Spatial_Operators>
+                <ogc:BBOX />
+                <ogc:Equals />
+                <ogc:Disjoint />
+                <ogc:Intersect />
+                <ogc:Touches />
+                <ogc:Crosses />
+                <ogc:Contains />
+                <ogc:Overlaps />
+            </ogc:Spatial_Operators>
+        </ogc:Spatial_Capabilities>
+        <ogc:Scalar_Capabilities>
+            <ogc:Logical_Operators />
+            <ogc:Comparison_Operators>
+                <ogc:Simple_Comparisons />
+                <ogc:Like />
+                <ogc:Between />
+                <ogc:NullCheck />
+            </ogc:Comparison_Operators>
+            <ogc:Arithmetic_Operators>
+                <ogc:Simple_Arithmetic />
+                <ogc:Functions>
+                    <ogc:Function_Names>
+                        <ogc:Function_Name nArgs="1">MIN</ogc:Function_Name>
+                        <ogc:Function_Name nArgs="1">MAX</ogc:Function_Name>
+                        <ogc:Function_Name nArgs="1">COUNT</ogc:Function_Name>
+                        <ogc:Function_Name nArgs="1">DISTINCT</ogc:Function_Name>
+                    </ogc:Function_Names>
+                </ogc:Functions>
+            </ogc:Arithmetic_Operators>
+        </ogc:Scalar_Capabilities>
+    </ogc:Filter_Capabilities>
+</WFS_Capabilities>

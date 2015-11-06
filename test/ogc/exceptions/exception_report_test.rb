@@ -6,16 +6,16 @@ module Ogc
       using CleanXML
 
       setup do
-        @xml_100    = read_xml('service_exception_report')
+        @xml_100    = read_xml('wfs/service_exception_report')
         @report_100 = ExceptionReport.new(@xml_100)
 
-        @xml_110    = read_xml('exception_report')
+        @xml_110    = read_xml('wfs/exception_report')
         @report_110 = ExceptionReport.new(@xml_110)
 
-        @xml_fake = read_xml('fake_report')
+        @xml_fake = read_xml('wfs/fake_report')
       end
 
-      test 'ExceptionReport inherits from OgcException' do
+      test 'class inherits from OgcException' do
         assert ExceptionReport < OgcException
       end
 
