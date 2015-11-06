@@ -1,4 +1,7 @@
 # Ogc
+[![Build Status](https://travis-ci.org/GRoguelon/ogc.svg?branch=master)](https://travis-ci.org/GRoguelon/ogc)
+[![Code Climate](https://codeclimate.com/github/GRoguelon/ogc/badges/gpa.svg)](https://codeclimate.com/github/GRoguelon/ogc)
+[![GitHub version](https://badge.fury.io/gh/groguelon%2Fogc.svg)](https://badge.fury.io/gh/groguelon%2Fogc)
 
 This gems allow you to make calls in using WFS or WPS protocol defined by OGC organization.
 
