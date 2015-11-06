@@ -24,7 +24,7 @@ module Ogc
       @cleaned_xml += %{</methods></class>}
     end
 
-    def test_exceptions_module_is_defined
+    test 'clean_xml! method remove the breaklines' do
       assert_equal @cleaned_xml, @xml.clean_xml!
     end
   end

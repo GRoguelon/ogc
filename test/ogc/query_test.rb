@@ -10,7 +10,7 @@ module Ogc
       @query = @hash.to_query
     end
 
-    def test_exceptions_module_is_defined
+    test 'query method converts a query to hash' do
       assert_equal @hash, Hash.from_query(@query)
     end
   end

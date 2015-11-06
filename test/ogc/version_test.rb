@@ -1,14 +1,14 @@
 require 'test_helper'
 
 module Ogc
-  class VersionTest < Minitest::Test
+  class VersionTest < TestCase
     SEMANTIV_VERSION_REGEX = /\A\d+\.\d+\.\d+(\.[a-z0-9]+)?\z/
 
-    def test_ogc_version_is_defined
+    test 'ogc version is defined' do
       assert_kind_of String, VERSION
     end
 
-    def test_ogc_version_respects_semantic_versions
+    test 'ogc version respects semantic versions' do
       assert_match SEMANTIV_VERSION_REGEX, VERSION
     end
   end
