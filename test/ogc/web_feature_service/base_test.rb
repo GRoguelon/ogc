@@ -1,8 +1,5 @@
 require 'test_helper'
 
-require 'ogc/clean_xml'
-require 'active_support/core_ext/hash/keys'
-
 module Ogc
   module WebFeatureService
     class BaseTest < TestCase
