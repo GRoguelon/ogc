@@ -48,6 +48,14 @@ module Ogc
         assert Base::DEFAULT_PARAMS.frozen?
       end
 
+      test 'request_name class method returns the name of the class' do
+        assert_equal 'Base', Base.request_name
+        assert_same Base.request_name, Base.request_name
+
+        FakeService = Class.new(Base)
+        assert_equal 'FakeService', FakeService.request_name
+      end
+
       test 'constructor takes an url and some params as arguments' do
         assert_equal URL, @base.url
         refute_same PARAMS, @base.params

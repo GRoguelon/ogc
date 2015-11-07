@@ -15,7 +15,7 @@ module Ogc
         # XML files
         @response  = read_file('wfs/get_capabilities_response')
 
-        query = FULL_PARAMS.merge(request: GetCapabilities::REQUEST).to_query
+        query = FULL_PARAMS.merge(request: GetCapabilities.request_name).to_query
 
         # Get method returns xml response:
         stub_request(:get, "#{URL}?#{query}").to_return(body: @response)

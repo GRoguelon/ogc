@@ -1,10 +1,8 @@
 module Ogc
   module WebFeatureService
     class GetCapabilities < Base
-      REQUEST = :GetCapabilities
-
       def get(&block)
-        super(request: REQUEST, &block)
+        super(request: self.class.request_name, &block)
       end
     end
   end
