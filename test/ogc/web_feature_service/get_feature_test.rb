@@ -5,15 +5,19 @@ module Ogc
     class GetFeatureTest < TestCase
       using CleanXML
 
-      URL         = 'http://localhost/wfs'
-      PARAMS      = { 'version' => '1.0.0', 'key' => 'ABCDE', typeName: :HYDROGRAPHY }
+      URL    = 'http://localhost/wfs'
+      PARAMS = {
+        'version'  => '1.0.0',
+        'key'      => 'ABCDE',
+        'typeName' => 'HYDROGRAPHY'
+      }
       FULL_PARAMS = PARAMS.merge(Base::DEFAULT_PARAMS)
 
       setup do
         @base = GetFeature.new(URL, PARAMS)
 
         # XML files
-        @response  = read_file('wfs/get_feature_response')
+        @response = read_file('wfs/get_feature_response')
 
         query = FULL_PARAMS.merge(request: GetFeature.request_name).to_query
 

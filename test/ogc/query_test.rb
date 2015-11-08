@@ -6,7 +6,11 @@ module Ogc
     using Query
 
     setup do
-      @hash  = { 'service' => 'wfs', 'srsname' => 'epsg:4326', 'version' => '1.0.0' }
+      @hash = {
+        'service' => 'wfs',
+        'srsname' => 'epsg:4326',
+        'version' => '1.0.0'
+      }
       @query = @hash.to_query
     end
 

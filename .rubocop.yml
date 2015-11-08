@@ -1,0 +1,20 @@
+Documentation:
+  Enabled: false
+
+Style/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/AndOr:
+  EnforcedStyle: always
+
+Style/Encoding:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Metrics/LineLength:
+  Max: 82

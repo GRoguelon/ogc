@@ -13,7 +13,7 @@ module Ogc
         @base = GetCapabilities.new(URL, PARAMS)
 
         # XML files
-        @response  = read_file('wfs/get_capabilities_response')
+        @response = read_file('wfs/get_capabilities_response')
 
         query = FULL_PARAMS.merge(request: GetCapabilities.request_name).to_query
 

@@ -1,10 +1,10 @@
 module Ogc
   module WebFeatureService
     class GetFeature < Base
-      def get(type_name, extra_params = Hash.new, &block)
+      def get(type_name, extra_params = {}, &block)
         params = {
-          :request  => self.class.request_name,
-          :typeName => type_name
+          'request'  => self.class.request_name,
+          'typeName' => type_name
         }.merge!(extra_params)
 
         super(params, &block)

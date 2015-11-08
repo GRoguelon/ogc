@@ -3,6 +3,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
+require 'English'
 require 'ogc/version'
 
 Gem::Specification.new do |spec|
@@ -13,8 +14,11 @@ Gem::Specification.new do |spec|
   spec.authors = ['Geoffrey Roguelon']
   spec.email   = ['geoffrey.roguelon@gmail.com']
 
-  spec.summary     = %q{Allow you to use WFS protocol defined by OGC.}
-  spec.description = %q{This gems allow you to make calls in using  Web Feature Service protocol defined by OGC (Open Geospatial Consortium) organization.}
+  spec.summary     = 'Allow you to use WFS protocol defined by OGC.'
+  spec.description = <<-STR
+    This gems allow you to make calls in using Web Feature Service protocol
+    defined by OGC (Open Geospatial Consortium) organization.
+  STR
   spec.homepage    = 'https://github.com/GRoguelon/ogc'
   spec.license     = 'MIT'
 
@@ -23,10 +27,12 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = 'http://mygemserver.com'
   else
+    # rubocop:disable Metrics/LineLength
     raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
+    # rubocop:enable Metrics/LineLength
   end
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
@@ -40,4 +46,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard', '~> 2.13'
   spec.add_development_dependency 'guard-minitest', '~> 2.4'
   spec.add_development_dependency 'webmock', '~> 1.22'
+  spec.add_development_dependency 'rubocop', '~> 0.35'
 end

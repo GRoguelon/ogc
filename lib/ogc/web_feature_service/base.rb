@@ -20,12 +20,13 @@ module Ogc
 
       class << self
         def request_name
-          @request_name ||= self.to_s.demodulize
+          @request_name ||= to_s.demodulize
         end
       end
 
-      def initialize(url, params = Hash.new)
-        @url, @params = url, params.stringify_keys!.merge(DEFAULT_PARAMS)
+      def initialize(url, params = {})
+        @url    = url
+        @params = params.stringify_keys!.merge(DEFAULT_PARAMS)
       end
 
       def get(extra_params, &block)
@@ -37,7 +38,7 @@ module Ogc
       end
 
       def http
-        @http ||= Net::HTTP.new(uri.host, uri.port)
+        @http ||= Net::HTTP.new(uri.host, uri.port)
       end
 
     private
@@ -52,13 +53,18 @@ module Ogc
         case (response = http.request(request))
         when Net::HTTPSuccess
           @response = Nokogiri::XML(response.body.clean_xml!).tap do |xml|
+            # rubocop:disable Style/RaiseArgs
             raise ExceptionReport.new(xml) if ExceptionReport.exception?(xml)
+            # rubocop:enable Style/RaiseArgs
           end
         else
+          # rubocop:disable Style/RaiseArgs
           raise RequestFailedException.new(response)
+          # rubocop:enable Style/RaiseArgs
         end
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
-        Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => ex
+             Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError,
+             Net::ProtocolError
         raise RequestErrorException
       end
 
