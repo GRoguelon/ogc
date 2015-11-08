@@ -16,7 +16,7 @@ module Ogc
       def initialize(report)
         raise ArgumentError unless self.class.exception?(report)
         @report = report
-        super(get_first_exception_message)
+        super(first_exception_message)
       end
 
       def at_xpath(xpath)
@@ -34,7 +34,7 @@ module Ogc
 
     private
 
-      def get_first_exception_message
+      def first_exception_message
         message   = @report.at_xpath('//xmlns:ServiceException')
         message ||= @report.at_xpath('//xmlns:ExceptionText')
         message && message.content
