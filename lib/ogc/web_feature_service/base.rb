@@ -52,7 +52,7 @@ module Ogc
         case (response = http.request(request))
         when Net::HTTPSuccess
           @response = Nokogiri::XML(response.body.clean_xml!).tap do |xml|
-            raise ExceptionReport.new(xml) if ExceptionReport.is_exception?(xml)
+            raise ExceptionReport.new(xml) if ExceptionReport.exception?(xml)
           end
         else
           raise RequestFailedException.new(response)

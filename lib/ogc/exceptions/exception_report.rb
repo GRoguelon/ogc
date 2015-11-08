@@ -8,13 +8,13 @@ module Ogc
       attr_reader :report
 
       class << self
-        def is_exception?(report)
+        def exception?(report)
           ROOTS.include?(report.root.name)
         end
       end
 
       def initialize(report)
-        raise ArgumentError unless self.class.is_exception?(report)
+        raise ArgumentError unless self.class.exception?(report)
         @report = report
         super(get_first_exception_message)
       end

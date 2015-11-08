@@ -24,9 +24,9 @@ module Ogc
         assert_kind_of Array, ExceptionReport::ROOTS
       end
 
-      test 'is_exception? class method return boolean' do
-        assert ExceptionReport.is_exception?(@xml_100)
-        refute ExceptionReport.is_exception?(@xml_fake)
+      test 'exception? class method return boolean' do
+        assert ExceptionReport.exception?(@xml_100)
+        refute ExceptionReport.exception?(@xml_fake)
       end
 
       test 'constructor takes xml and sets the attribute' do
