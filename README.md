@@ -23,7 +23,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Currently the gem OGC handles only some Web Feature Service calls.
+
+To use it, you have two ways.
+
+Either, you use the shortcut method of `WebFeatureService`module:
+
+```ruby
+# GetCapabilities
+Ogc::WebFeatureService.get_capabilities('http://localhost/wfs', version: '1.0.0', key: 'SECRET')
+#=> #<Ogc::WebFeatureService::GetCapabilities:0x007ffba414adc8 @url="http://localhost/wfs", @params={"version"=>"1.0.0", "key"=>"SECRET", "service"=>"wfs"}>
+
+# GetFeature
+Ogc::WebFeatureService.get_feature('http://localhost/wfs', version: '1.0.0', key: 'SECRET')
+#=> #<Ogc::WebFeatureService::GetFeature:0x007ffba41ad720 @url="http://localhost/wfs", @params={"version"=>"1.0.0", "key"=>"SECRET", "service"=>"wfs"}>
+```
+
+Or use the class directly:
+
+```ruby
+# GetCapabilities
+Ogc::WebFeatureService::GetCapabilies.new('http://localhost/wfs', version: '1.0.0', key: 'SECRET')
+#=> #<Ogc::WebFeatureService::GetCapabilities:0x007ffba414adc8 @url="http://localhost/wfs", @params={"version"=>"1.0.0", "key"=>"SECRET", "service"=>"wfs"}>
+
+# GetFeature
+Ogc::WebFeatureService::GetFeature.new('http://localhost/wfs', version: '1.0.0', key: 'SECRET')
+#=> #<Ogc::WebFeatureService::GetFeature:0x007ffba41ad720 @url="http://localhost/wfs", @params={"version"=>"1.0.0", "key"=>"SECRET", "service"=>"wfs"}>
+```
+
+After that, you can use the methods `#get` and `#post` to resquest the endpoint.
+
+```ruby
+ogc = Ogc::WebFeatureService::GetFeature.new('http://localhost/wfs', version: '1.0.0', key: 'SECRET')
+ogc.get(:FEATURE_1, filter '…')
+#=> Nokogiri::XML::Document
+```
 
 ## Development
 
