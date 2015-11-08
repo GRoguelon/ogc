@@ -52,15 +52,15 @@ module Ogc
       end
 
       test 'xpath method delegates to report instance variable' do
-        expected_xml  = %{<ServiceException code="999" locator="INSERT STMT 01">}
-        expected_xml += %{Unable to INSERT STMT}
-        expected_xml += %{</ServiceException>}
+        expected_xml  = '<ServiceException code="999" locator="INSERT STMT 01">'
+        expected_xml += 'Unable to INSERT STMT'
+        expected_xml += '</ServiceException>'
         actual_xml    = @report_100.xpath('//xmlns:ServiceException').first.to_xml
         assert_equal expected_xml, actual_xml
 
-        expected_xml  = %{<ExceptionText>}
-        expected_xml += %{parse error: missing closing tag for element wkbGeom}
-        expected_xml += %{</ExceptionText>}
+        expected_xml  = '<ExceptionText>'
+        expected_xml += 'parse error: missing closing tag for element wkbGeom'
+        expected_xml += '</ExceptionText>'
         actual_xml    = @report_110.xpath('//xmlns:ExceptionText').first.to_xml
         assert_equal expected_xml, actual_xml
       end

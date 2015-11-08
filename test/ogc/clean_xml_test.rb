@@ -18,10 +18,10 @@ module Ogc
         </class>
       XML
 
-      @cleaned_xml  = %{<class name="FakeClass" extends="Object"><methods>}
-      @cleaned_xml += %{<class-method name="clean" arity="1">}
-      @cleaned_xml += %{<arguements><argument name="xml" /></arguments>}
-      @cleaned_xml += %{</methods></class>}
+      @cleaned_xml  = '<class name="FakeClass" extends="Object"><methods>'
+      @cleaned_xml += '<class-method name="clean" arity="1">'
+      @cleaned_xml += '<arguements><argument name="xml" /></arguments>'
+      @cleaned_xml += '</methods></class>'
     end
 
     test 'clean_xml! method remove the breaklines' do
