@@ -5,7 +5,7 @@ module Ogc
     class GetCapabilitiesTest < TestCase
       URL         = 'http://localhost/wfs'
       PARAMS      = { 'version' => '1.0.0', 'key' => 'ABCDE' }
-      FULL_PARAMS = PARAMS.merge(Base::DEFAULT_PARAMS)
+      FULL_PARAMS = PARAMS.merge(Base.default_params)
 
       setup do
         @base = GetCapabilities.new(URL, PARAMS)

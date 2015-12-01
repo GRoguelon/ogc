@@ -1,13 +1,12 @@
-require 'ogc/web_feature_service/base'
+require 'ogc/web_processing_service/base'
 
 module Ogc
-  module WebFeatureService
-    class GetFeature < Base
-
+  module WebProcessingService
+    class Execute < Base
       def get(type_name, extra_params = {}, &block)
         params = {
           'request'  => self.class.request_name,
-          'typeName' => type_name
+          'identifier' => type_name
         }.merge!(extra_params)
 
         super(params, &block)

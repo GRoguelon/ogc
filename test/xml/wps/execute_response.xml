@@ -1,0 +1,35 @@
+<wps:ExecuteResponse xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xmlns:cub="http://data.bordeaux-metropole.fr" service="WPS" version="1.0.0" xml:lang="fr" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsExecuteResponse_response.xsd" serviceInstance="http://data.bordeaux-metropole.fr/wps?key=27Y2TBGE91&amp;service=WPS&amp;version=1.0.0&amp;request=getcapabilities">
+  <wps:Process wps:processVersion="1.0.0">
+    <ows:Identifier>SV_HORAI_A</ows:Identifier>
+    <ows:Title>Horaire de bus</ows:Title>
+    <ows:Abstract>Retourne les horaires sur SAEIV Bus - Tram</ows:Abstract>
+  </wps:Process>
+  <wps:Status creationTime="2015-12-01T14:26:26+01:00">
+    <wps:ProcessSucceeded>Traitement terminé</wps:ProcessSucceeded>
+  </wps:Status>
+  <wps:ProcessOutputs>
+    <wps:Output>
+      <ows:Identifier>result</ows:Identifier>
+      <ows:Title>Tous les objets de la couche</ows:Title>
+      <ows:Abstract>Tous les objets de la couche</ows:Abstract>
+      <wps:Data>
+        <wps:ComplexData mimeType="text/xml">
+          <gml:featureMember>
+            <cub:SV_HORAI_A>
+              <cub:GID>267436295</cub:GID>
+              <cub:HOR_THEO>2015-12-01T08:18:57</cub:HOR_THEO>
+              <cub:HOR_APP>2015-12-01T08:18:57</cub:HOR_APP>
+              <cub:HOR_REAL/>
+              <cub:ETAT>REALISE</cub:ETAT>
+              <cub:TYPE>REGULIER</cub:TYPE>
+              <cub:CDATE>2015-12-01T08:40:09</cub:CDATE>
+              <cub:MDATE>2015-12-01T08:40:09</cub:MDATE>
+              <cub:RS_SV_ARRET_P>592</cub:RS_SV_ARRET_P>
+              <cub:RS_SV_COURS_A>258470616</cub:RS_SV_COURS_A>
+            </cub:SV_HORAI_A>
+          </gml:featureMember>
+        </wps:ComplexData>
+      </wps:Data>
+    </wps:Output>
+  </wps:ProcessOutputs>
+</wps:ExecuteResponse>

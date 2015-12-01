@@ -1,3 +1,5 @@
+require 'ogc/web_feature_service/base'
+
 module Ogc
   module WebFeatureService
     class GetCapabilities < Base
