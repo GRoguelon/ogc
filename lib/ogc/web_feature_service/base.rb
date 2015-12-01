@@ -30,7 +30,8 @@ module Ogc
       end
 
       def get(extra_params, &block)
-        fetch(:get, extra_params ? extra_params.merge(@params) : @params, &block)
+        params = extra_params ? extra_params.merge(@params) : @params
+        fetch(:get, params, &block)
       end
 
       def post(body, &block)
