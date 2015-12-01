@@ -3,8 +3,6 @@ require 'test_helper'
 module Ogc
   module Exceptions
     class ExceptionReportTest < TestCase
-      using CleanXML
-
       setup do
         @xml_100    = read_xml('wfs/service_exception_report')
         @report_100 = ExceptionReport.new(@xml_100)

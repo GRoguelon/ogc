@@ -11,9 +11,6 @@ module Ogc
     class Base
       include Exceptions
 
-      using CleanXML
-      using Query
-
       attr_reader :params, :response, :url
 
       DEFAULT_PARAMS = { 'service' => 'wfs' }.freeze
@@ -83,7 +80,8 @@ module Ogc
         return uri_without_params if extra_params.blank?
 
         uri_without_params.dup.tap do |uri|
-          uri.query = Hash.from_query(uri.query).merge!(extra_params).to_query
+          www_form  = Hash[URI.decode_www_form(uri.query.to_s)]
+          uri.query = www_form.merge!(extra_params).to_query
         end
       end
 

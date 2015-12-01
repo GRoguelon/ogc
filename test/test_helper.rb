@@ -10,8 +10,6 @@ require 'minitest/autorun'
 
 module Ogc
   class TestCase < Minitest::Test
-    using CleanXML
-
     class << self
       def setup(&block)
         define_method(:setup, &block)

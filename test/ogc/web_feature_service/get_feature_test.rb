@@ -3,8 +3,6 @@ require 'test_helper'
 module Ogc
   module WebFeatureService
     class GetFeatureTest < TestCase
-      using CleanXML
-
       URL    = 'http://localhost/wfs'
       PARAMS = {
         'version'  => '1.0.0',

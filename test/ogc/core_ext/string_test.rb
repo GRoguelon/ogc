@@ -2,8 +2,7 @@ require 'test_helper'
 require 'active_support/core_ext/string/strip'
 
 module Ogc
-  class CleanXMLTest < TestCase
-    using CleanXML
+  class StringTest < TestCase
 
     setup do
       @xml = <<-XML.strip_heredoc

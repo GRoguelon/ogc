@@ -3,8 +3,6 @@ require 'test_helper'
 module Ogc
   module WebFeatureService
     class GetCapabilitiesTest < TestCase
-      using CleanXML
-
       URL         = 'http://localhost/wfs'
       PARAMS      = { 'version' => '1.0.0', 'key' => 'ABCDE' }
       FULL_PARAMS = PARAMS.merge(Base::DEFAULT_PARAMS)

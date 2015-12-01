@@ -4,7 +4,6 @@ module Ogc
   module WebFeatureService
     class BaseTest < TestCase
       include Exceptions
-      using CleanXML
 
       URL         = 'http://localhost/wfs'
       PARAMS      = { 'version' => '1.0.0', 'key' => 'ABCDE' }
