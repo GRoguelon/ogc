@@ -24,9 +24,9 @@ module Ogc
         end
       end
 
-      def initialize(url, params = {})
+      def initialize(url, params = nil)
         @url    = url
-        @params = params.stringify_keys!.merge(DEFAULT_PARAMS)
+        @params = (params ? params.stringify_keys : {}).merge!(DEFAULT_PARAMS)
       end
 
       def get(extra_params, &block)
