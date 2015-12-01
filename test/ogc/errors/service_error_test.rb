@@ -2,20 +2,20 @@ require 'test_helper'
 require 'minitest/mock'
 
 module Ogc
-  module Exceptions
-    class RequestFailedExceptionTest < TestCase
+  module Errors
+    class ServiceErrorTest < TestCase
       setup do
         @mock = Minitest::Mock.new
         @mock.expect :code, 666
         @mock.expect :message, 'Hello Wolrd'
       end
 
-      test 'class inherits from OgcException' do
-        assert RequestFailedException < OgcException
+      test 'class inherits from OgcError' do
+        assert ServiceError < OgcError
       end
 
       test 'constructor takes a HTTP error' do
-        ex = RequestFailedException.new(@mock)
+        ex = ServiceError.new(@mock)
         assert 666, ex.code
         assert 'Hello World', ex.message
         @mock.verify

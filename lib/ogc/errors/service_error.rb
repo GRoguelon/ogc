@@ -1,6 +1,8 @@
+require 'ogc/errors/ogc_error'
+
 module Ogc
-  module Exceptions
-    class RequestFailedException < OgcException
+  module Errors
+    class ServiceError < OgcError
       attr_reader :code
 
       def initialize(http_error)

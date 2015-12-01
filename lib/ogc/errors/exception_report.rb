@@ -1,8 +1,8 @@
-require 'ogc/exceptions/ogc_exception'
+require 'ogc/errors/ogc_error'
 
 module Ogc
-  module Exceptions
-    class ExceptionReport < OgcException
+  module Errors
+    class ExceptionReport < OgcError
       ROOTS = %w( ServiceExceptionReport ExceptionReport ).freeze
 
       attr_reader :report

@@ -3,7 +3,7 @@ require 'test_helper'
 module Ogc
   module WebFeatureService
     class BaseTest < TestCase
-      include Exceptions
+      include Errors
 
       URL         = 'http://localhost/wfs'
       PARAMS      = { 'version' => '1.0.0', 'key' => 'ABCDE' }
@@ -114,7 +114,7 @@ module Ogc
       end
 
       test 'exception is raised if Timeout is raised' do
-        assert_raises RequestErrorException do
+        assert_raises RequestError do
           @base.get(request: :hello, ex: :timeout)
         end
       end
@@ -123,13 +123,13 @@ module Ogc
         begin
           @base.get(request: :hello, ex: :timeout)
           assert false # In case where the exception is not raised.
-        rescue RequestErrorException => ex
+        rescue RequestError => ex
           assert_instance_of Timeout::Error, ex.cause
         end
       end
 
-      test 'request error raises RequestFailedException exception' do
-        assert_raises RequestFailedException do
+      test 'request error raises ServiceError exception' do
+        assert_raises ServiceError do
           @base.get(request: :hello, ex: :notFound)
         end
       end

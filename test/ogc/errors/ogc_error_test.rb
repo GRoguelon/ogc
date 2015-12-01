@@ -1,10 +1,10 @@
 require 'test_helper'
 
 module Ogc
-  module Exceptions
-    class OgcExceptionTest < TestCase
+  module Errors
+    class OgcErrorTest < TestCase
       test 'class inherits from StandardError' do
-        assert OgcException < StandardError
+        assert OgcError < StandardError
       end
     end
   end

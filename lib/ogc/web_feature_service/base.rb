@@ -1,4 +1,4 @@
-require 'ogc/exceptions'
+require 'ogc/errors'
 
 require 'active_support/core_ext/hash/keys'
 require 'active_support/core_ext/object/blank'
@@ -9,7 +9,7 @@ require 'nokogiri'
 module Ogc
   module WebFeatureService
     class Base
-      include Exceptions
+      include Errors
 
       attr_reader :params, :response, :url
 
@@ -57,13 +57,13 @@ module Ogc
           end
         else
           # rubocop:disable Style/RaiseArgs
-          raise RequestFailedException.new(response)
+          raise ServiceError.new(response)
           # rubocop:enable Style/RaiseArgs
         end
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
              Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError,
              Net::ProtocolError
-        raise RequestErrorException
+        raise RequestError
       end
 
       def request(type, content)

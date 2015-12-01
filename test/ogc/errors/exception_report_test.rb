@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module Ogc
-  module Exceptions
+  module Errors
     class ExceptionReportTest < TestCase
       setup do
         @xml_100    = read_xml('wfs/service_exception_report')
@@ -13,8 +13,8 @@ module Ogc
         @xml_fake = read_xml('wfs/fake_report')
       end
 
-      test 'class inherits from OgcException' do
-        assert ExceptionReport < OgcException
+      test 'class inherits from OgcError' do
+        assert ExceptionReport < OgcError
       end
 
       test 'ROOTS constant is a frozen array of string' do
