@@ -1,3 +1,6 @@
+# Documentation files
+doc/*
+
 # Bundler files
 /.bundle/
 /Gemfile.lock
